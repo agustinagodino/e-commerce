@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
         if (inputPassword.value === ''){
             inputPassword.classList.add("invalid");
-            camposCompleos = false ;
+            camposCompletos = false ;
         }
 
         if (camposCompletos) {
