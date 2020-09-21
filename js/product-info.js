@@ -4,6 +4,41 @@
 
 var producto = {};
 
+function showrelatedProducts(arraylistado,arrayrelacionados){
+    let contenido ="<hr>"
+    arrayrelacionados.forEach(function(i){
+        
+        contenido +=`
+        
+
+        <p  class=" list-group-item-action">
+
+        
+            <div class="row">
+                
+                <div class="col">
+                    <div class="d-flex w-100 justify-content-between">
+                        <dt class="mb-1">`+  arraylistado[i].name+`</dt>
+                        
+                    </div>
+                    <p class="mb-1">` + "Precio:"+" "+arraylistado[i].currency + arraylistado[i].cost  + `</p>
+
+                    <img src="${arraylistado[i].imgSrc}"width="235">;<br>
+
+        <a href="product-info.html"> <button style="float: right;"> Ver producto </button></a>
+                   
+                </div>
+            </div>
+        </p>
+        `
+    });
+    document.getElementById("relatedProducts").innerHTML = contenido ;
+}
+        
+
+
+
+
 function showImages(array){
 
     let htmlContentToAppend = "";
@@ -101,6 +136,9 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
     document.addEventListener("DOMContentLoaded", function (e) {
+
+
+
         getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
             if (resultObj.status === "ok"){
                 comment = resultObj.data;
@@ -115,6 +153,16 @@ document.addEventListener("DOMContentLoaded", function(e){
                 
             }});
 
+
+            getJSONData(PRODUCTS_URL ).then(function(resultObj) {
+                if (resultObj.status === "ok") {
+                    productarray = resultObj.data;
+                    showrelatedProducts(productarray,product.relatedProducts);
+                    
+    
+                    
+                }});
+    
           
         });
 
