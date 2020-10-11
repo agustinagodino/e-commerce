@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="width=device-width, initial-scale=1.0">
   <title>eMercado - Todo lo que busques está aquí</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -27,6 +27,38 @@
         font-size: 3.5rem;
       }
     }
+
+    .centrado {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color:cornsilk;
+  background-color: blue;
+}
+
+
+
+h2,{
+  text-align: center;
+}
+   
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table.center {
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+
+
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -40,21 +72,93 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      
+      <div class="dropdown" id="info-user" style="display :none;">
+        <button id="user" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html">Carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a id="salir" class="dropdown-item" >Cerrar sesión</a>
+        </div>
+      </div>
 
-      <div id="info-user"style= "display: none; ">
-        <p id ="user" style="color: white " ></p> <br>
-        <button id="salir">Salir</button>
       
       </div>
     </div>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div >
+    <br>
+    <br>
+    <h2>Tu carrito:</h2>
+    <br>
+    <br>
+      <table class="center">
+        
+          <tr>
+            <th></th>
+            <th>   Titulo  </th>
+            <th>  Moneda  </th>
+            <th>  Precio  </th>
+            <th>  Cantidad  </th>
+            <th>  COSTO TOTAL  </th>
+          </tr>
+   
+        <tbody id="listado"> </tbody>
+        
+      </table>
+    
+      <h4>Zona de envío</h4>
+
+    <div >
+
+      <input id="premium" name="envio" type="radio" value="2" checked="" required="">
+      <label for="premium">premium</label> <br>
+
+      <input id="estándar" name="envio" type="radio" value="4" required="">
+      <label for="estándar">estándar</label> <br>
+
+      <input id="normal" name="envio" type="radio" value="6" required="">
+      <label for="normal">normal</label> <br>
+
+    </div>
+  
+    <br>
+
+      <button class="centrado" data-toggle="modal" data-target="#modalPagar">Comprar</button>
+      <br><br>
     </div>
   </div>
   <div id="spinner-wrapper">
